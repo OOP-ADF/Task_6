@@ -25,8 +25,8 @@ public class TwitterModel {
             twitter.updateStatus(tweet);
             JOptionPane.showMessageDialog(null, "pesan berhasil");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "judul exception",
-                    "pesan exception", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Gagal",
+                    "pesan tidak terkirim", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -40,8 +40,8 @@ public class TwitterModel {
             }
             return s;
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "judul exception",
-                    "pesan exception", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Gagal",
+                    "ada kesalahan sistem", JOptionPane.ERROR_MESSAGE);
             return null;
         }
     }
@@ -50,8 +50,8 @@ public class TwitterModel {
         try {
             twitter.createFriendship(user);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "judul exception",
-                    "pesan exception", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Gagal",
+                    "pengguna tidak ditemukan", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
