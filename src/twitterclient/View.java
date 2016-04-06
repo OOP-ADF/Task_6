@@ -5,17 +5,14 @@
  */
 package twitterclient;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author agungrb
  */
-public class TwitterClient {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public interface View {
+    
+    public void addListener(ActionListener e);
     
 }
