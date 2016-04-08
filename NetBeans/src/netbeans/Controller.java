@@ -7,6 +7,7 @@ package netbeans;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -42,6 +43,51 @@ public class Controller implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
+        if(view instanceof HomeTimeline){
+            HomeTimeline home = (HomeTimeline) view;
+            if(source.equals(home.getBtnCompose())){
+                goToComposeTweet();
+                home.dispose();
+            }
+            else if(source.equals(home.getBtnFollow())){
+                goToFollowUser();
+                home.dispose();
+            }
+            else if(source.equals(home.getBtnRefresh())){
+                String Timeline = model.getHomeTimeline();
+                home.setTimeline(Timeline);
+            }
+            else if(source.equals(home.getBtnExit())){
+                JOptionPane.showMessageDialog(null,"Thankyou");
+                System.exit(0);
+            }
+        }
+        else if(view instanceof ComposeTweet){
+            ComposeTweet compose = (ComposeTweet) view;
+            if(source.equals(compose.getBtnCancel())){
+                goToHomeTimeline();
+                compose.dispose();
+            }
+            else if(source.equals(compose.getBtnTweet())){
+                String Tweet = compose.getTweet();
+                model.tweetStatus(Tweet);
+                goToHomeTimeline();
+                compose.dispose();
+            }
+        }
+        else if (view instanceof FollowUser){
+            FollowUser follow = (FollowUser) view;
+            if(source.equals(follow.getBtnCancel())){
+                goToHomeTimeline();
+                follow.dispose();
+            }
+            else if(source.equals(follow.getBtnFollow())){
+                String user = follow.getUser();
+                model.followUser(user);
+                follow.setUser("");
+                
+            }
+        }
         
     }
     

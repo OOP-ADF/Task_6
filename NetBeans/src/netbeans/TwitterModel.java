@@ -26,8 +26,9 @@ public class TwitterModel {
         }
     }
     public String getHomeTimeline(){
+        String s = "";
         try{
-            String s = "";
+            
             List<Status> status = twitter.getHomeTimeline();
             for (int i = 0; i < status.size(); i++){
                 s = s + status.get(i).getUser().getScreenName() + " - " + status.get(i).getText() + "\n\n";
@@ -36,14 +37,13 @@ public class TwitterModel {
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, "judul exception", "pesan exception", JOptionPane.ERROR_MESSAGE);
         }
-        
+        return s;
     }
-    public void follow(String user){
+    public void followUser(String user){
         try{
             twitter.createFriendship(user);
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, "judul exception", "pesan exception", JOptionPane.ERROR_MESSAGE);
         }
-    }
-    
+    }   
 }
