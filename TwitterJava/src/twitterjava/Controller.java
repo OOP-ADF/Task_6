@@ -48,38 +48,47 @@ public class Controller implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
-        HomeTimeLine home = (HomeTimeLine) view;
-        if (source.equals(home.getBtnCompose())) {
-            goToComposeTweet();
-            home.dispose();
-        } else if (source.equals(home.getBtnFollow())) {
-            goToComposeTweet();
-            home.dispose();
-        } else if (source.equals(home.getBtnRefresh())) {
-            String timeline = model.getHomeTimeLine();
-            home.setTimeline(timeline);
-        } else if (source.equals(home.getBtnExit())) {
-            JOptionPane.showMessageDialog(null, "Thank you");
-            System.exit(0);
+        try {
+            if (view instanceof HomeTimeLine) {
+                HomeTimeLine home = (HomeTimeLine) view;
+                if (source.equals(home.getBtnCompose())) {
+                    goToComposeTweet();
+                    home.dispose();
+                } else if (source.equals(home.getBtnFollow())) {
+                    goToFollowUser();
+                    home.dispose();
+                } else if (source.equals(home.getBtnRefresh())) {
+                    String timeline = model.getHomeTimeLine();
+                    home.setTimeline(timeline);
+                } else if (source.equals(home.getBtnExit())) {
+                    JOptionPane.showMessageDialog(null, "Thank you");
+                    System.exit(0);
+                }
+            } else if (view instanceof ComposeTweet) {
+                ComposeTweet compose = (ComposeTweet) view;
+                if (source.equals(compose.getBtnCancel())) {
+                    goToHomeTimeline();
+                    compose.dispose();
+                } else if (source.equals(compose.getBtnTweet())) {
+                    String tweet = compose.getTweet();
+                    model.tweetStatus(tweet);
+                    goToHomeTimeline();
+                    compose.dispose();
+                }
+            } else {
+                FollowUser follow = (FollowUser) view;
+                if (source.equals(follow.getBtnCancel())) {
+                    goToHomeTimeline();
+                    follow.dispose();
+                } else if (source.equals(follow.getBtnFollow())) {
+                    String user = follow.getUser();
+                    model.followUser(user);
+                    follow.setUser("");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        ComposeTweet compose = (ComposeTweet) view;
-        if (source.equals(compose.getBtnCancel())) {
-            goToHomeTimeline();
-            compose.dispose();
-        } else if (source.equals(compose.getBtnTweet())) {
-            String tweet = compose.getTweet();
-            model.tweetStatus(tweet);
-            goToHomeTimeline();
-            compose.dispose();
-        }
-        FollowUser follow=(FollowUser) view;
-        if (source.equals(follow.getBtnCancel())) {
-            goToHomeTimeline();
-            follow.dispose();
-        } else if (source.equals(follow.getBtnFollow())) {
-            String user = follow.getUser();
-            model.followUser(user);
-            follow.setUser("");
-        }
+
     }
 }

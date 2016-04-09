@@ -78,6 +78,7 @@ public class FollowUser extends javax.swing.JFrame implements View {
 
     /**
      * @param args the command line arguments
+     * @return 
      */
     public Object getBtnCancel() {
         return btnCancel;

@@ -89,6 +89,7 @@ public class HomeTimeLine extends javax.swing.JFrame implements View{
 
     /**
      * @param args the command line arguments
+     * @return 
      */
 
     public Object getBtnCompose() {
