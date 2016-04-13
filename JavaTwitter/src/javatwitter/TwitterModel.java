@@ -25,7 +25,7 @@ public class TwitterModel {
             twitter.updateStatus(tweet);
             JOptionPane.showMessageDialog(null, "pesan berhasil");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "judul exception", "pesan exception", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Tweet status error", "Tweet status error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -38,7 +38,7 @@ public class TwitterModel {
             }
             return s;
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "judul exception", "pesan exception", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "HomeTimeline Error", "HomeTimeline Error", JOptionPane.ERROR_MESSAGE);
         }
         return null;
     }
@@ -47,7 +47,7 @@ public class TwitterModel {
         try {
             twitter.createFriendship(user);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "judul exception", "pesan exception", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "FollowUser Error", "FollowUser Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     

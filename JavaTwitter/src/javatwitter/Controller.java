@@ -17,6 +17,8 @@ public class Controller implements ActionListener{
     TwitterModel model;
     View view;
 
+    
+    
     public void goToHomeTimeline(){
         HomeTimeline home = new HomeTimeline();
         home.setVisible(true);
@@ -38,7 +40,6 @@ public class Controller implements ActionListener{
         follow.addlistener(this);
         view = follow;
     }
-    
     public Controller() {
         model = new TwitterModel();
         goToHomeTimeline();
@@ -54,7 +55,7 @@ public class Controller implements ActionListener{
             goToComposeTweet();
             home.dispose();
             } else if (source.equals(home.getBtnFollow())){
-                goToComposeTweet();
+                goToFollowUser();
                 home.dispose();
             } else if (source.equals(home.getBtnRefresh())){
                 String timeline = model.getHomeTimeline();
@@ -74,7 +75,7 @@ public class Controller implements ActionListener{
                     goToHomeTimeline();
                     compose.dispose();
                 }
-            }else if (view instanceof FollowUser){
+        }   else if (view instanceof FollowUser){
                 FollowUser follow = (FollowUser) view;
                 if (source.equals(follow.getBtnCancel())){
                     goToHomeTimeline();
