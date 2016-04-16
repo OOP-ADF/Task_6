@@ -16,6 +16,7 @@ public class Controller implements ActionListener {
     private TwitterModel model;
     private View view;
     
+    
     public Controller () {
         model = new TwitterModel();
         goToHomeTimeline();
