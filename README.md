@@ -167,20 +167,17 @@ Buatlah class Controller.java sesuai class diagram berikut <br>
   * jika event berasal dari btnFollow :
     * panggil method goToFollowUser()
     * dispose view home
-	* ![32](https://cloud.githubusercontent.com/assets/13241336/26094906/eaf04a76-3a45-11e7-816a-eae036f848cf.PNG)
-
+    * ![32](https://cloud.githubusercontent.com/assets/13241336/26094906/eaf04a76-3a45-11e7-816a-eae036f848cf.PNG)
   * jika event berasal dari btnRefresh : 
     * set text area timeline dengan String yang diambil dari getHomeTimeline dari model
     * ![33](https://cloud.githubusercontent.com/assets/13241336/26094905/eaf0369e-3a45-11e7-8c70-4767ff8c1788.PNG)
-
   * jika event berasal dari btnExit :
     * tampilkan pesan
     * hentikan program
     * ![34](https://cloud.githubusercontent.com/assets/13241336/26094913/eb3e9f6e-3a45-11e7-9749-ef05b39da0e3.PNG)
 
 * jika view merupakan ComposeTweet :
-  * Downcast view<br>![35](https://cloud.githubusercontent.com/assets/13241336/26094908/eb0d0300-3a45-11e7-8c40-285073974821.PNG)
-<br>
+  * Downcast view<br>![35](https://cloud.githubusercontent.com/assets/13241336/26094908/eb0d0300-3a45-11e7-8c40-285073974821.PNG)<br>
   * cek source action event
   * jika event berasal dari btnCancel : 
     * panggil method goToHomeTimeline
@@ -193,10 +190,9 @@ Buatlah class Controller.java sesuai class diagram berikut <br>
     * panggil method goToHomeTimeline
     * dispose view compose
     * ![37](https://cloud.githubusercontent.com/assets/13241336/26094910/eb21b1e2-3a45-11e7-9aac-0d29fb7224d9.PNG)
-
+    
 * jika view merupakan FollowUser :
-  * Downcast view<br>![38](https://cloud.githubusercontent.com/assets/13241336/26094911/eb2484c6-3a45-11e7-93d2-392cab7c7034.PNG)
- <br>
+  * Downcast view<br>![38](https://cloud.githubusercontent.com/assets/13241336/26094911/eb2484c6-3a45-11e7-93d2-392cab7c7034.PNG) <br>
   * cek source action event
   * jika event berasal dari btnCancel : 
     * panggil method goToHomeTimeline
