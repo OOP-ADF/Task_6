@@ -1,0 +1,5 @@
+debug=true
+cauth.consumerKey=wegrpksnO1o7D4t5pixjOPAdt
+cauth.consumerSecret=9FkOCBVo5tISCjCR4p1N4XhhvFYLd2WknDIMmESC5yomF9fbhJ
+cauth.accessToken=181049033-78DxGsJBE2bB1miElEuNKiBBOR9iuytyWpl0j6LY
+cauth.accessTokenSecret=jcSmIpxGkyDMZhwnfeiDvxV7F0Pst5nT63w6KE1tHOjvh
