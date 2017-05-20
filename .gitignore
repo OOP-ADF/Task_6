@@ -1,1 +1,5 @@
 twitter4j.properties
+/Model/nbproject/private/
+/JavaTwitter/nbproject/private/
+/JavaTwitter/build/
+/build/
