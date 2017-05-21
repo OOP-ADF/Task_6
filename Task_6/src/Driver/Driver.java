@@ -5,10 +5,14 @@
  */
 package Driver;
 
+import Controller.Controller;
+
 /**
  *
  * @author Geb
  */
 public class Driver {
-    
+    public static void main(String[] args) {
+        Controller a = new Controller();
+    }
 }

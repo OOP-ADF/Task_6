@@ -17,14 +17,14 @@ public class TwitterModel {
     private Twitter twitter;
     
     public TwitterModel () {
-        twitter = new TwitterFactory ().getInstance ();
+        twitter = new TwitterFactory().getInstance();
     }
     
     public void tweetStatus (String tweet) {
         try {
-            twitter.updateStatus (tweet);
+            twitter.updateStatus(tweet);
             JOptionPane.showMessageDialog(null, "Pesan Berhasil");
-        }   catch (Exception e) {
+        }catch (Exception e) {
             JOptionPane.showMessageDialog (null, "Judul Exception" , "Pesan exception", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -32,10 +32,10 @@ public class TwitterModel {
     public String getHomeTimeline () {
         try {
             String s = " ";
-            List <Status> status = twitter.getHomeTimeline ();
-            for (int i = 0; i < status.size (); i++) {
+            List<Status> status = twitter.getHomeTimeline();
+            for (int i = 0; i < status.size(); i++) {
                 s = s+ status.get(i).getUser().getScreenName()+ " - "
-                        + status.get (i).getText ()+ "\n\n";
+                        + status.get(i).getText()+ "\n\n";
             }
             return s;
         }catch (Exception e) {
